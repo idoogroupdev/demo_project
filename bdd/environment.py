@@ -1,8 +1,6 @@
 from behave import register_type, use_fixture
 from django.core.management import call_command
 
-from bdd.fixtures import setup_wallets
-
 
 def parse_int(string):
     return int(string)
@@ -23,14 +21,11 @@ def cast(string):
 
 register_type(cast=cast)
 
+fixture_registry = {}
+
 
 def before_feature(context, feature):
     call_command('flush', verbosity=0, interactive=False)
-
-
-fixture_registry = {
-    'wallets': setup_wallets
-}
 
 
 def use_fixture_by_tag(tag, context, fixture_registry):

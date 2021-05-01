@@ -1,4 +1,4 @@
-from .base import *
+from .base import * # noqa
 from apps.utils import get_secret
 
 DATABASES = {
@@ -17,17 +17,6 @@ SECRET_KEY = get_secret('DEMO_PROJECT_SECRET_KEY'),
 INSTALLED_APPS += [
     'raven.contrib.django.raven_compat',
 ]
-
-# import raven
-#
-# VERSION = '0.1'
-
-# RAVEN_CONFIG = {
-#     'dsn': 'https://0110f857397d4e1c8c6473dccb085fed:2769b5d3d1f440eda1eaf4109fa02caa@sentry.io/1197976',
-#     # If you are using git, you can also automatically configure the
-#     # release based on the git info.
-#     'release': VERSION,
-# }
 
 DEBUG = False
 

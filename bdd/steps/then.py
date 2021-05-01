@@ -1,6 +1,6 @@
 from json import loads
 
-from behave import *
+from behave import use_step_matcher, then, step
 from django.http import HttpResponse
 from jsonpath_ng import parse
 from pytest import fail
@@ -112,5 +112,5 @@ def step_impl(context, amount, path):
 
     assert len(result) == amount, f"""
 Actual amount: {len(result)}
-Expected amount: {amount}, 
+Expected amount: {amount},
     """

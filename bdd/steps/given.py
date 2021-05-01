@@ -1,6 +1,6 @@
 from json import loads
 import pytest
-from behave import *
+from behave import given, step, use_step_matcher
 from django.contrib.auth.models import User, AnonymousUser
 from mixer.backend.django import mixer
 

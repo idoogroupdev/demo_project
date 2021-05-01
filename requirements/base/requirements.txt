@@ -1,7 +1,6 @@
-Django
-graphene-django
-pytz
-djangorestframework
-graphene-django-extras
-django-model-utils
-iso8601
+Django==3.2
+pytz==2021.1
+djangorestframework==3.12.4
+graphene-django-extras==0.5.1
+django-model-utils==4.1.1
+iso8601==0.1.14
