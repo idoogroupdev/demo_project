@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - feature/*
+
+jobs:
+  cicd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install -r requirements/test/requirements.txt
+      - name: Run static code analysis
+        run: flake8 .
+      - name: Run BDD tests
+        env:
+          DJANGO_SETTINGS_MODULE: gp_business_api.settings.test
+        run: python3 manage.py behave
+
